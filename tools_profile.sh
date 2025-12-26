@@ -54,3 +54,17 @@ fi
 
 # Terraform
 # complete -o nospace -C /opt/homebrew/bin/terraform terraform
+
+# Docker
+# source <(docker completion zsh)
+
+# Kind
+# source <(kind completion zsh)
+
+# --- PostgreSQL Client ---
+if [[ -d "/opt/homebrew/opt/postgresql@17/bin" ]]; then
+    export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
+fi
+
+# psql
+# source <(psql completion zsh)

@@ -97,4 +97,34 @@ else
     echo "❌ Terraform not found, installing..."
     brew tap hashicorp/tap && brew install hashicorp/tap/terraform
 fi
+echo ""
+
+echo "10. Docker:"
+if command -v docker &> /dev/null; then
+    echo "Path: $(command -v docker)"
+    docker --version
+else
+    echo "❌ Docker not found, installing..."
+    brew install --cask docker
+fi
+echo ""
+
+echo "11. Kind:"
+if command -v kind &> /dev/null; then
+    echo "Path: $(command -v kind)"
+    kind --version
+else
+    echo "❌ Kind not found, installing..."
+    brew install kind
+fi
+echo ""
+
+echo "12. PostgreSQL Client (psql):"
+if command -v psql &> /dev/null; then
+    echo "Path: $(command -v psql)"
+    psql --version
+else
+    echo "❌ psql not found, installing..."
+    brew install postgresql@17
+fi
 echo "--------------------------------------------------"
